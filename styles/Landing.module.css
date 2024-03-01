@@ -1,0 +1,37 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5; /* Light grey background */
+  }
+  
+  .logo {
+    max-width: 120px; /* Adjust the size of your logo */
+    margin-bottom: 50px; /* Space between logo and options */
+  }
+  
+  .options {
+    display: flex;
+    gap: 20px; /* Space between the two boxes */
+  }
+  
+  .box {
+    width: 150px; /* Square boxes */
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff; /* Blue background */
+    color: #ffffff; /* White text */
+    border-radius: 15px; /* Curved borders */
+    font-size: 20px; /* Larger text */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    transition: background-color 0.3s; /* Smooth background color transition on hover */
+  }
+  
+  .box:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
