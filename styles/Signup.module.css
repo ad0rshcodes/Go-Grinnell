@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "Poppins";
+    src: url(../Fonts/Poppins/Poppins-Medium.ttf)
+  }  
+
+/* pages/signup.module.css */
+.signupContainer {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', Courier, monospace;
+  }
+  
+  .logo {
+    max-width: 120px; /* Adjust the size of your logo */
+    margin-bottom: 50px; /* Space between logo and options */
+}
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .inputField {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Rounded borders similar to Apple's style */
+    font-size: 16px;
+  }
+  
+  .checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  
+  .registerButton {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .registerButton:hover {
+    background-color: #643ef0; /* Change color on hover */
+  }
+  
+  .signInText {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
