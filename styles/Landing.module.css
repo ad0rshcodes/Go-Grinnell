@@ -19,25 +19,25 @@
   
   .options {
     display: flex;
-    gap: 20px; /* Space between the two boxes */
+    gap: 15px; /* Space between the two boxes */
     flex-direction: column;
   }
   
   .box {
-    width: 150px; /* Square boxes */
-    height: 150px;
+    width: 220px; /* Square boxes */
+    height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #007bff; /* Blue background */
+    background-color: #0f141a; /* Blue background */
     color: #ffffff; /* White text */
-    border-radius: 15px; /* Curved borders */
+    border-radius: 3em; /* Curved borders */
     font-size: 20px; /* Larger text */
     cursor: pointer; /* Cursor changes to pointer on hover */
     transition: background-color 0.3s; /* Smooth background color transition on hover */
   }
   
   .box:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #643ef0; /* Darker blue on hover */
   }
   
