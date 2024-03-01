@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router"; // Import useRouter
 import styles from "../styles/Signup.module.css"; // Import the CSS module
 
 const Signup = () => {
 	const router = useRouter(); // Initialize the router
+	const [isAgeChecked, setIsAgeChecked] = useState(false);
+	const [isTermsChecked, setIsTermsChecked] = useState(false);
 
 	const handleSubmit = (e) => {
 		e.preventDefault(); // Prevent default form submission behavior
 		// Here you can add form validation or other operations before redirecting
 
-		router.push("/landing"); // Redirect to the landing page
+		if (isAgeChecked && isTermsChecked) {
+			router.push("/landing"); // Redirect to the landing page if terms are checked
+		} else {
+			alert(
+				"Please accept the terms and conditions and confirm your age."
+			);
+		}
 	};
+
+	const handleAgeChange = () => {
+		setIsAgeChecked(!isAgeChecked); // Toggle the age checkbox
+	};
+
+	const handleTermsChange = () => {
+		setIsTermsChecked(!isTermsChecked); // Toggle the terms checkbox
+	};
+
 	return (
 		<div className={styles.signupContainer}>
 			<img
@@ -19,30 +36,53 @@ const Signup = () => {
 				className={styles.logo}
 			/>
 			<form className={styles.form} onSubmit={handleSubmit}>
-				{" "}
-				{/* Add handleSubmit to form submission */}
+				<label className={styles.label}>Name</label>
 				<input
 					type='text'
-					placeholder='Name'
+					placeholder='Enter your name'
 					className={styles.inputField}
+					required // Make the field required
 				/>
+				<label className={styles.label}>Email</label>
 				<input
 					type='email'
-					placeholder='Email'
+					placeholder='Enter your email'
 					className={styles.inputField}
+					required // Make the field required
 				/>
+				<label className={styles.label}>Contact Number</label>
 				<input
 					type='tel'
-					placeholder='Contact Number'
+					placeholder='Enter your contact number'
 					className={styles.inputField}
+					required // Make the field required
 				/>
+				<label className={styles.label}>Pcard Number</label>
 				<input
 					type='text'
-					placeholder='Pcard Number'
+					placeholder='Enter your Pcard number'
 					className={styles.inputField}
+					required // Make the field required
 				/>
 				<label className={styles.checkboxContainer}>
-					<input type='checkbox' />I am 18 and above
+					<input
+						type='checkbox'
+						checked={isAgeChecked}
+						onChange={handleAgeChange}
+						required // Make the checkbox required
+					/>
+					<span className={styles.checkmark}></span>I confirm that I
+					am 18 years old or above.
+				</label>
+				<label className={styles.checkboxContainer}>
+					<input
+						type='checkbox'
+						checked={isTermsChecked}
+						onChange={handleTermsChange}
+						required // Make the checkbox required
+					/>
+					<span className={styles.checkmark}></span>I have read the
+					<a href='/terms'>terms and conditions.</a>
 				</label>
 				<button type='submit' className={styles.registerButton}>
 					Register
