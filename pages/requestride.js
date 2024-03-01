@@ -10,14 +10,26 @@ const RequestRide = () => {
   const [time, setTime] = useState('');
   const router = useRouter();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const rideData = { from, to, rideType, date, time };
+  
+    // Send the ride data to the API route
+    await fetch('/api/saveRideData', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(rideData),
+    });
+  
     // Navigate to /confirmride with query parameters
     router.push({
       pathname: '/confirmride',
-      query: { from, to, rideType, date, time },
+      query: { ...rideData },
     });
   };
+  
 
   return (
     <>
