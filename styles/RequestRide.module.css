@@ -1,0 +1,66 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f8f8; /* Light shade for navbar */
+}
+
+.logo {
+  /* Add styles for your logo here */
+}
+
+.navItems {
+  display: flex;
+}
+
+.navButton, .signOut {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 10px; /* Border radius same as fields */
+}
+
+.navButton:hover, .signOut:hover {
+  background-color: #643ef0;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input, .select {
+  padding: 10px;
+  border-radius: 10px; /* Adjust based on Apple's UI radius */
+  border: 1px solid #ccc;
+  width: 40vw; /* Increased width */
+  outline: none; /* Disables the blue highlight on focus */
+}
+
+.submitButton {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 10px; /* Same as fields */
+}
+
+.submitButton:hover {
+  background-color: #643ef0;
+  color: white;
+}

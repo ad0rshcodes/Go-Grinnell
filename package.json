@@ -6,10 +6,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.11",
+    "mapbox-gl": "^3.2.0",
     "next": "latest",
     "next-auth": "^4.24.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-datepicker": "^6.2.0",
+    "react-dom": "18.2.0",
+    "react-map-gl": "^7.1.7"
   },
   "engines": {
     "node": ">=18"
