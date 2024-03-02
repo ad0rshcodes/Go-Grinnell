@@ -47,6 +47,12 @@ const RequestRide = () => {
 					>
 						Request Ride
 					</button>
+					<button
+						onClick={() => router.push("/priceCalculator")}
+						className={styles.navButton}
+					>
+						Price Calculator
+					</button>
 					<button className={styles.signOut}>Sign Out</button>
 				</div>
 			</nav>

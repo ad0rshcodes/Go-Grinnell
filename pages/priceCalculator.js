@@ -1,48 +1,16 @@
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import Head from "next/head";
-import "mapbox-gl/dist/mapbox-gl.css";
+import styles from "/styles/priceCalculatorPage.module.css";
+import React from "react";
 import { useState } from "react";
-import mapHtml from "./mapHtml"; // Import the mapHtml constant
-import styles from "/styles/passengerPage.module.css";
+import { useRouter } from "next/router";
 
-export default function Passenger() {
-	const [activeTab, setActiveTab] = useState("map"); // State to manage active tab
+const priceCalculator = () => {
 	const router = useRouter();
-
-	useEffect(() => {
-		router.beforePopState(() => {
-			window.location.reload();
-			return true;
-		});
-	}, [router]);
-
-	const handleMapTabClick = () => {
-		if (activeTab !== "map") {
-			window.location.reload();
-		}
-		setActiveTab("map");
-	};
-
-	const handleCalculatorTabClick = () => {
-		if (activeTab !== "Price Calculator") {
-			setActiveTab("Price Calculator");
-		}
-	};
 
 	const [num1, setNum1] = useState(0);
 	const [num2, setNum2] = useState(0);
 	const [result, setResult] = useState(0);
 
 	const renderTabContent = () => {
-		if (activeTab === "map") {
-			return (
-				<div
-					style={{ marginTop: "20px", marginBottom: "20px" }}
-					dangerouslySetInnerHTML={{ __html: mapHtml }}
-				/>
-			);
-		} else if (activeTab === "Price Calculator") {
 			const handleAddition = () => {
 				const result = (
 					Number(num1) * 0.66 +
@@ -53,7 +21,9 @@ export default function Passenger() {
 
 			return (
 				<div className={styles.outermostDiv}>
-					<h2>Suggested Price Calculator</h2>
+					<h1 style={{ marginBottom: "20px", color: "navy" }}>
+					Estimated Price Calculator
+					</h1>
 					<p>
 						Enter total time in minutes and total miles (one way):
 					</p>
@@ -176,57 +146,40 @@ export default function Passenger() {
 					</table>
 				</div>
 			);
-		}
 	};
 
 	return (
-		<div className={styles.outermostDiv} style={{ padding: "20px" }}>
-			<Head>
-				<title>Go Grinnell</title>
-			</Head>
-			<h1 style={{ marginBottom: "20px", color: "navy" }}>
-				Welcome to Go Grinnell
-			</h1>
-			<p style={{ marginBottom: "20px", fontSize: "1.2rem" }}>
-				Explore the beauty of Grinnell with our interactive map.
-			</p>
-
-			{/* Tab buttons */}
-			<div style={{ marginBottom: "20px" }}>
-				<button
-					onClick={handleMapTabClick}
-					style={{
-						marginRight: "10px",
-						backgroundColor:
-							activeTab === "map" ? "lightblue" : "white",
-						border: "1px solid navy",
-						padding: "5px 10px",
-						cursor: "pointer",
-					}}
-				>
-					Map
-				</button>
-				<button
-					onClick={handleCalculatorTabClick}
-					style={{
-						backgroundColor:
-							activeTab === "Price Calculator"
-								? "lightblue"
-								: "white",
-						border: "1px solid navy",
-						padding: "5px 10px",
-						cursor: "pointer",
-					}}
-				>
-					Price Estimator
-				</button>
-			</div>
-
-			{/* Render active tab content */}
+		<div>
+			<nav className={styles.navbar}>
+				<img src='../public/logo.png' alt='Ride Sharing Logo' />
+				<div className={styles.navItems}>
+					<button
+						onClick={() => router.push("/availableride")}
+						className={styles.navButton}
+					>
+						Existing Rides
+					</button>
+					<button
+						onClick={() => router.push("/requestride")}
+						className={styles.navButton}
+					>
+						Request Ride
+					</button>
+                    <button
+						onClick={() => router.push("/priceCalculator")}
+						className={styles.navButton}
+					>
+						Price Calculator
+					</button>
+					<button className={styles.signOut}>Sign Out</button>
+				</div>
+			</nav>
 			{renderTabContent()}
 		</div>
 	);
-}
+};
+
+export default priceCalculator;
 
 const mockData = [
 	{
@@ -246,6 +199,5 @@ const mockData = [
 		phone: "345-678-9012",
 		email: "michael@example.com",
 		carType: "Truck",
-	},
-	// Add more mock data as needed
+	}
 ];

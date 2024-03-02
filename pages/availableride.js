@@ -2,7 +2,7 @@ import styles from "../styles/RequestRide.module.css";
 import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import rideData from "../data/rideData.json"; // Adjust the path as necessary
+import rideData from "../data/rideData.json";
 
 const availableride = () => {
 	const [from, setFrom] = useState("");
@@ -28,6 +28,12 @@ const availableride = () => {
 						className={styles.navButton}
 					>
 						Request Ride
+					</button>
+                    <button
+						onClick={() => router.push("/priceCalculator")}
+						className={styles.navButton}
+					>
+						Price Calculator
 					</button>
 					<button className={styles.signOut}>Sign Out</button>
 				</div>
