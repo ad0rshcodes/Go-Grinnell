@@ -1,6 +1,7 @@
 import rideData from '../data/rideData.json';
 
-const { from, to } = rideData;
+
+const { from, to } = rideData[rideData.length - 1];
 
 function capitalizeEveryWord(string) {
   return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
@@ -37,7 +38,7 @@ const mapHtml = `
   </style>
 </head>
 <body>
-  <div class="heading">
+  <div class="heading ">
   <h1 style="text-align: center; margin-bottom: 20px; color: #333 !important;">Directions from ${capitalizeEveryWord(from)} to ${capitalizeEveryWord(to)}</h1>
   <p stlye ="text-align: center; margin-bottom: 20px; color: #666 !important;">Estimated Price: $${estimatedPrice} | Driver Time Value: $${driverTimeValue} | Gas Value: $${gasValue}</p>
   </div>
@@ -65,8 +66,8 @@ const mapHtml = `
         geocoder: {
             language: 'en'
         },
-        origin: "${rideData.from}",
-        destination: "${rideData.to}",
+        origin: "${rideData[rideData.length - 1].from}",
+        destination: "${rideData[rideData.length - 1].to}",
         interactive: true,
         flyTo: false,
         overview: false
@@ -75,8 +76,8 @@ const mapHtml = `
     map.addControl(directions, 'top-left');
 
     setTimeout(function() {
-        directions.setOrigin("${rideData.from}");
-        directions.setDestination("${rideData.to}");
+        directions.setOrigin("${rideData[rideData.length - 1].from}");
+        directions.setDestination("${rideData[rideData.length - 1].to}");
     }, 1000); //
   </script>
 </body>
