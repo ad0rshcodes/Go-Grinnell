@@ -151,7 +151,7 @@ const priceCalculator = () => {
 	return (
 		<div>
 			<nav className={styles.navbar}>
-				<img src='../public/logo.png' alt='Ride Sharing Logo' />
+				<img src='/logo.png' alt='Ride Sharing Logo' style={{ width: '2.5em' }} />
 				<div className={styles.navItems}>
 					<button
 						onClick={() => router.push("/availableride")}
