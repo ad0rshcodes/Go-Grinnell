@@ -9,9 +9,22 @@ const priceCalculator = () => {
 	const [num1, setNum1] = useState(0);
 	const [num2, setNum2] = useState(0);
 	const [result, setResult] = useState(0);
+	const [gasValue, setgasValue] = useState(0);
+	const [driverTime, setdriverTime] = useState(0);
 
 	const renderTabContent = () => {
 			const handleAddition = () => {
+
+				const gasValue = (
+					Number(num2) * 0.45
+				).toFixed(2);
+				setgasValue(gasValue);
+
+				const driverTime = (
+					Number(num1) * 0.66
+				).toFixed(2);
+				setdriverTime(driverTime);
+
 				const result = (
 					Number(num1) * 0.66 +
 					Number(num2) * 0.45
@@ -63,9 +76,11 @@ const priceCalculator = () => {
 						Get Suggested Price
 					</button>
 					<div style={{ marginBottom: "10px" }}>
-						Result: ${result}
+						Driver Time Price: ${driverTime}<br></br>
+						Gas Cost: ${gasValue}<br></br>
+						Total: ${result}
 					</div>
-					<h2>GoGrinnell Registered Drivers</h2>
+					{/* <h2>GoGrinnell Registered Drivers</h2>
 					<table
 						style={{ borderCollapse: "collapse", width: "100%" }}
 					>
@@ -143,7 +158,7 @@ const priceCalculator = () => {
 								</tr>
 							))}
 						</tbody>
-					</table>
+					</table> */}
 				</div>
 			);
 	};
@@ -184,23 +199,23 @@ const priceCalculator = () => {
 
 export default priceCalculator;
 
-const mockData = [
-	{
-		name: "John Doe",
-		phone: "123-456-7890",
-		email: "john@example.com",
-		carType: "Sedan",
-	},
-	{
-		name: "Jane Smith",
-		phone: "234-567-8901",
-		email: "jane@example.com",
-		carType: "SUV",
-	},
-	{
-		name: "Michael Johnson",
-		phone: "345-678-9012",
-		email: "michael@example.com",
-		carType: "Truck",
-	}
-];
+// const mockData = [
+// 	{
+// 		name: "John Doe",
+// 		phone: "123-456-7890",
+// 		email: "john@example.com",
+// 		carType: "Sedan",
+// 	},
+// 	{
+// 		name: "Jane Smith",
+// 		phone: "234-567-8901",
+// 		email: "jane@example.com",
+// 		carType: "SUV",
+// 	},
+// 	{
+// 		name: "Michael Johnson",
+// 		phone: "345-678-9012",
+// 		email: "michael@example.com",
+// 		carType: "Truck",
+// 	}
+// ];

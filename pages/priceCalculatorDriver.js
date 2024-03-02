@@ -9,9 +9,21 @@ const priceCalculatorDriver = () => {
 	const [num1, setNum1] = useState(0);
 	const [num2, setNum2] = useState(0);
 	const [result, setResult] = useState(0);
+	const [gasValue, setgasValue] = useState(0);
+	const [driverTime, setdriverTime] = useState(0);
 
 	const renderTabContent = () => {
 			const handleAddition = () => {
+				const gasValue = (
+					Number(num2) * 0.45
+				).toFixed(2);
+				setgasValue(gasValue);
+
+				const driverTime = (
+					Number(num1) * 0.66
+				).toFixed(2);
+				setdriverTime(driverTime);
+				
 				const result = (
 					Number(num1) * 0.66 +
 					Number(num2) * 0.45
@@ -63,7 +75,9 @@ const priceCalculatorDriver = () => {
 						Get Suggested Price
 					</button>
 					<div style={{ marginBottom: "10px" }}>
-						Result: ${result}
+						Driver Time Price: ${driverTime}<br></br>
+						Gas Cost: ${gasValue}<br></br>
+						Total: ${result}
 					</div>
 				</div>
 			);
