@@ -16,16 +16,16 @@ const Driver = () => {
 
     const handleAccept = (index) => {
         if (acceptedIndices.includes(index)) {
-            setAcceptedIndices(acceptedIndices.filter((i) => i !== index)); // Remove the index if already accepted
+            setAcceptedIndices(acceptedIndices.filter((i) => i !== index));
         } else {
-            setAcceptedIndices([...acceptedIndices, index]); // Add the index if not already accepted
+            setAcceptedIndices([...acceptedIndices, index]);
         }
     };
 
 	return (
 		<div>
 			<nav className={styles.navbar}>
-                <img src='/logo.png' alt='Ride Sharing Logo' style={{ width: '2.5em'}} /> {/* Updated image source path */}
+                <img src='/logo.png' alt='Ride Sharing Logo' style={{ width: '2.5em'}} /> {}
 				<div className={styles.navItems}>
 					<button
 						onClick={() => router.push("/driver")}
@@ -112,7 +112,7 @@ const Driver = () => {
                     color: "#fff",
                 }}
             >
-                Join
+                Accept
             </th>
         </tr>
     </thead>

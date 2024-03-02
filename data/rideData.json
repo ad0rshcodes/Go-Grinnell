@@ -54,5 +54,19 @@
         "rideType": "public",
         "date": "1111-11-11",
         "time": "11:11"
+    },
+    {
+        "from": "grinnell College",
+        "to": "carer-hawkeye arena",
+        "rideType": "public",
+        "date": "1010-10-10",
+        "time": "10:10"
+    },
+    {
+        "from": "1115 8th Ave, Grinnell",
+        "to": "carver-hawkeye arena",
+        "rideType": "public",
+        "date": "2024-01-31",
+        "time": "15:00"
     }
 ]
