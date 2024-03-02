@@ -6,10 +6,6 @@
   background-color: #f8f8f8; /* Light shade for navbar */
 }
 
-.logo {
-  /* Add styles for your logo here */
-}
-
 .navItems {
   display: flex;
 }
@@ -42,8 +38,19 @@
   gap: 20px;
 }
 
-.input, .select {
+.input {
   padding: 10px;
+  padding-right: 10;
+  border-radius: 10px; /* Adjust based on Apple's UI radius */
+  border: 1px solid #ccc;
+  width: 40vw; /* Increased width */
+  outline: none; /* Disables the blue highlight on focus */
+}
+
+.select {
+  width: 100% !important;
+  padding: 10px;
+  padding-right: 10;
   border-radius: 10px; /* Adjust based on Apple's UI radius */
   border: 1px solid #ccc;
   width: 40vw; /* Increased width */
@@ -63,4 +70,8 @@
 .submitButton:hover {
   background-color: #643ef0;
   color: white;
+}
+
+.inputGroup {
+  margin-bottom: 1rem;
 }
