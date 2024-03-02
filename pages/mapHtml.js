@@ -24,7 +24,7 @@ const mapHtml = `
 </head>
 <body>
   <div class="heading">
-  <h1 style="text-align: center;">Directions from ${capitalizeEveryWord(from)} to ${capitalizeEveryWord(to)}</h1>
+    <h1 style="text-align: center;">Directions from ${capitalizeEveryWord(from)} to ${capitalizeEveryWord(to)}</h1>
   </div>
   <div id="map"></div>
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
@@ -34,7 +34,6 @@ const mapHtml = `
     mapboxgl.accessToken = 'pk.eyJ1IjoiamgxOTQyIiwiYSI6ImNsdDZjZWJrdTBhZGQycXA2aHczYWZ6cXAifQ.jgEwffkeNPLjIQ6vAah11w';
     const map = new mapboxgl.Map({
         container: 'map',
-        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/mapbox/streets-v12',
         center: [-92.7232, 41.7434],
         zoom: 13
@@ -42,33 +41,28 @@ const mapHtml = `
 
     map.on('load', function() {
         map.resize();
-      });
+    });
 
-      // Get directions
-      const directions = new MapboxDirections({
-       accessToken: mapboxgl.accessToken,
-       profile: 'mapbox/driving', // You can choose other profiles like walking or cycling
-       alternatives: false, // If you don't want alternative routes
-         geocoder: {
-             language: 'en' // Language for directions
-         },
-       origin: "${rideData.from}",
-       destination: "${rideData.to}", 
-       interactive: true,
-       flyTo: false, // Prevent the map from automatically flying to the route
-       overview: false // Disable the overview map showing the entire route
-      });
-        
+    const directions = new MapboxDirections({
+        accessToken: mapboxgl.accessToken,
+        profile: 'mapbox/driving',
+        alternatives: false,
+        geocoder: {
+            language: 'en'
+        },
+        origin: "${rideData.from}",
+        destination: "${rideData.to}",
+        interactive: true,
+        flyTo: false,
+        overview: false
+    });
 
-        // Show directions
-      map.addControl(directions, 'top-left');
+    map.addControl(directions, 'top-left');
 
-        // Trigger route calculation
-      setTimeout(function() {
-       directions.setOrigin("${rideData.from}");
-       directions.setDestination("${rideData.to}");
-      }, 1000); //
-
+    setTimeout(function() {
+        directions.setOrigin("${rideData.from}");
+        directions.setDestination("${rideData.to}");
+    }, 1000); //
   </script>
 </body>
 </html>
