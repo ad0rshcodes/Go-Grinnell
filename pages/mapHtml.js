@@ -2,6 +2,10 @@ import rideData from '../data/rideData.json';
 
 const { from, to } = rideData;
 
+function capitalizeEveryWord(string) {
+  return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
 const mapHtml = `
 <!DOCTYPE html>
 <html>
@@ -12,18 +16,17 @@ const mapHtml = `
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
   <style>
     body { margin: 0; padding: 0; }
-    #map { position: absolute; top: 20%; bottom: 0; width: 95%;, left: 25%, right: 25%, height: 70vh; }
-    .map-overlay { position: absolute; top: 10px; left: 10px; z-index: 1; }
+    #map { position: absolute; top: 10%; bottom: 10%; width: 80%; left: 10%; right: 10%; height: 80vh; }
+    .map-overlay { position: absolute; top: 10px; left: 10px; }
+    .instructions { position: absolute; top: 10px; right: 10px; background-color: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .heading { text-align: center; margin-top: 20px; }
   </style>
 </head>
 <body>
-
-
-  <div id="map"></div>
-  <div class="map-overlay">
-    Hello World!
+  <div class="heading">
+  <h1 style="text-align: center;">Directions from ${capitalizeEveryWord(from)} to ${capitalizeEveryWord(to)}</h1>
   </div>
-
+  <div id="map"></div>
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.2.0/mapbox-gl-directions.js"></script>
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.2.0/mapbox-gl-directions.css" type="text/css">
