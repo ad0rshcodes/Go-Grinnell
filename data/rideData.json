@@ -1,1 +1,23 @@
-{"from":"grinnell iowa","to":"des moines iowa","rideType":"public","date":"1111-11-11","time":"11:11"}
+[
+    {
+        "from": "grinnell college",
+        "to": "dsm aiport",
+        "rideType": "public",
+        "date": "1111-11-11",
+        "time": "11:11"
+    },
+    {
+        "from": "grinnell college",
+        "to": "dsm aiport",
+        "rideType": "public",
+        "date": "1111-11-11",
+        "time": "11:11"
+    },
+    {
+        "from": "grinnell college",
+        "to": "dsm aiport",
+        "rideType": "public",
+        "date": "1111-11-11",
+        "time": "11:11"
+    }
+]

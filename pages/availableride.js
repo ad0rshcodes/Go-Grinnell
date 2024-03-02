@@ -12,6 +12,16 @@ const availableride = () => {
 	const [time, setTime] = useState("");
 	const router = useRouter();
 
+    const [acceptedIndices, setAcceptedIndices] = useState([]);
+
+    const handleAccept = (index) => {
+        if (acceptedIndices.includes(index)) {
+            setAcceptedIndices(acceptedIndices.filter((i) => i !== index)); // Remove the index if already accepted
+        } else {
+            setAcceptedIndices([...acceptedIndices, index]); // Add the index if not already accepted
+        }
+    };
+
 	return (
 		<div>
 			<nav className={styles.navbar}>
@@ -113,52 +123,22 @@ const availableride = () => {
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td
-                style={{
-                    textAlign: "center",
-                    padding: "10px",
-                }}
-            >
-                {rideData.from}
-            </td>
-            <td
-                style={{
-                    textAlign: "center",
-                    padding: "10px",
-                }}
-            >
-                {rideData.to}
-            </td>
-            <td
-                style={{
-                    textAlign: "center",
-                    padding: "10px",
-                }}
-            >
-                {rideData.date}
-            </td>
-            <td
-                style={{
-                    textAlign: "center",
-                    padding: "10px",
-                }}
-            >
-                {rideData.time}
-            </td>
-            <td
-                style={{
-                    textAlign: "center",
-                    padding: "10px",
-                }}
-            >
-                <button style={{ backgroundColor: "black", color: "#fff" }}>
-                    Join
-                </button>
+    {rideData.map((ride, index) => (
+        <tr key={index}>
+            <td style={{ textAlign: "center", padding: "10px" }}>{ride.from}</td>
+            <td style={{ textAlign: "center", padding: "10px" }}>{ride.to}</td>
+            <td style={{ textAlign: "center", padding: "10px" }}>{ride.date}</td>
+            <td style={{ textAlign: "center", padding: "10px" }}>{ride.time}</td>
+            <td style={{ textAlign: "center", padding: "10px" }}>
+                {acceptedIndices.includes(index) ? (
+                                <span>Joined</span>
+                            ) : (
+                                <button onClick={() => handleAccept(index)} style={{ backgroundColor: "black", color: "#fff" }}>Join</button>
+                            )}
             </td>
         </tr>
-        {/* If you have more ride data, map over it and create rows here */}
-    </tbody>
+    ))}
+</tbody>
 </table>
 				</div>
 			</div>

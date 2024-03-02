@@ -6,6 +6,20 @@ function capitalizeEveryWord(string) {
   return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
+let estimatedPrice = 55; // Default price
+let driverTimeValue = 40; 
+let gasValue = 15;
+
+if (from.toLowerCase().includes("airport") || to.toLowerCase().includes("airport")) {
+    estimatedPrice = 68.11;
+    driverTimeValue = 42.90; 
+    gasValue = 25.21;
+} else if (from.toLowerCase().includes("arena") || to.toLowerCase().includes("arena")) {
+    estimatedPrice = 74.13;
+    driverTimeValue = 44.88; 
+    gasValue = 29.25;
+}
+
 const mapHtml = `
 <!DOCTYPE html>
 <html>
@@ -16,7 +30,7 @@ const mapHtml = `
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
   <style>
     body { margin: 0; padding: 0; }
-    #map { position: absolute; top: 10%; bottom: 10%; width: 80%; left: 10%; right: 10%; height: 80vh; }
+    #map { position: absolute; top: 15%; bottom: 5%; width: 90%; left: 5%; right: 5%; height: 80vh; }
     .map-overlay { position: absolute; top: 10px; left: 10px; }
     .instructions { position: absolute; top: 10px; right: 10px; background-color: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
     .heading { text-align: center; margin-top: 20px; }
@@ -24,7 +38,8 @@ const mapHtml = `
 </head>
 <body>
   <div class="heading">
-    <h1 style="text-align: center;">Directions from ${capitalizeEveryWord(from)} to ${capitalizeEveryWord(to)}</h1>
+  <h1 style="text-align: center; margin-bottom: 20px; color: #333 !important;">Directions from ${capitalizeEveryWord(from)} to ${capitalizeEveryWord(to)}</h1>
+  <p stlye ="text-align: center; margin-bottom: 20px; color: #666 !important;">Estimated Price: $${estimatedPrice} | Driver Time Value: $${driverTimeValue} | Gas Value: $${gasValue}</p>
   </div>
   <div id="map"></div>
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
