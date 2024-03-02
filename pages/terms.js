@@ -6,6 +6,10 @@ const Terms = () => {
 		<div className={styles.termsContainer}>
 			<h1 className={styles.title}>Terms and Conditions</h1>
 			<div className={styles.section}>
+				<h2>Driver Verification</h2>
+				<p>
+					We verify that all drivers on our ride-sharing platform have a valid driver's license. However, it is the responsibility of each user to ensure the driver meets their personal standards and qualifications.
+				</p>
 				<h2>Insurance</h2>
 				<p>
 					Our ride-sharing platform provides a platform for college
