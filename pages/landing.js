@@ -13,7 +13,7 @@ export default function Landing() {
 			<div className={styles.options}>
 				<div
 					className={styles.box}
-					onClick={() => router.push("/passenger")}
+					onClick={() => router.push("/requestride")}
 				>
 					Passenger
 				</div>

@@ -25,7 +25,7 @@ const RequestRide = () => {
   
     // Navigate to /confirmride with query parameters
     router.push({
-      pathname: '/confirmride',
+      pathname: '/mapHtml',
       query: { ...rideData },
     });
   };
