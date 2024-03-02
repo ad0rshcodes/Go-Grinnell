@@ -29,13 +29,14 @@ const availableride = () => {
 					>
 						Request Ride
 					</button>
-                    <button
-						onClick={() => router.push("/priceCalculator")}
-						className={styles.navButton}
-					>
+                    <button onClick={() => router.push("/priceCalculator")}
+						className={styles.navButton}>
 						Price Calculator
 					</button>
-					<button className={styles.signOut}>Sign Out</button>
+					<button onClick={() => router.push("/signup")}
+                        className={styles.signOut}>
+                        Sign Out
+                    </button>
 				</div>
 			</nav>
 

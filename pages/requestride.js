@@ -33,7 +33,7 @@ const RequestRide = () => {
 	return (
 		<>
 			<nav className={styles.navbar}>
-        <img src='/logo.png' alt='Ride Sharing Logo' style={{ width: '2.5em' }} />
+       		 <img src='/logo.png' alt='Ride Sharing Logo' style={{ width: '2.5em' }} />
 				<div className={styles.navItems}>
 					<button
 						onClick={() => router.push("/availableride")}
@@ -53,7 +53,10 @@ const RequestRide = () => {
 					>
 						Price Calculator
 					</button>
-					<button className={styles.signOut}>Sign Out</button>
+					<button onClick={() => router.push("/signup")}
+                        className={styles.signOut}>
+                        Sign Out
+                    </button>
 				</div>
 			</nav>
 			<div className={styles.formContainer}>
