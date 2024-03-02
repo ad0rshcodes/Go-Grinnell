@@ -43,96 +43,116 @@ const availableride = () => {
 				}}
 			>
 				<div style={{ width: "90%", overflowX: "auto" }}>
-					<table
-						style={{
-							width: "100%",
-							borderCollapse: "collapse",
-							tableLayout: "fixed",
-							border: "1px solid #ccc",
-						}}
-					>
-						<thead>
-							<tr>
-								<th
-									style={{
-										textAlign: "center",
-										padding: "10px",
-										backgroundColor: "rgba(0, 0, 0, 0.8)",
-										color: "#fff",
-									}}
-								>
-									From
-								</th>
-								<th
-									style={{
-										textAlign: "center",
-										padding: "10px",
-										backgroundColor: "rgba(0, 0, 0, 0.8)",
-										color: "#fff",
-									}}
-								>
-									To
-								</th>
-								<th
-									style={{
-										textAlign: "center",
-										padding: "10px",
-										backgroundColor: "rgba(0, 0, 0, 0.8)",
-										color: "#fff",
-									}}
-								>
-									Date
-								</th>
-								<th
-									style={{
-										textAlign: "center",
-										padding: "10px",
-										backgroundColor: "rgba(0, 0, 0, 0.8)",
-										color: "#fff",
-									}}
-								>
-									Time
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td
-									style={{
-										textAlign: "center",
-										padding: "10px",
-									}}
-								>
-									{rideData.from}
-								</td>
-								<td
-									style={{
-										textAlign: "center",
-										padding: "10px",
-									}}
-								>
-									{rideData.to}
-								</td>
-								<td
-									style={{
-										textAlign: "center",
-										padding: "10px",
-									}}
-								>
-									{rideData.date}
-								</td>
-								<td
-									style={{
-										textAlign: "center",
-										padding: "10px",
-									}}
-								>
-									{rideData.time}
-								</td>
-							</tr>
-							{/* If you have more ride data, map over it and create rows here */}
-						</tbody>
-					</table>
+<table
+    style={{
+        width: "100%",
+        borderCollapse: "collapse",
+        tableLayout: "fixed",
+        border: "1px solid #ccc",
+    }}
+>
+    <thead>
+        <tr>
+            <th
+                style={{
+                    textAlign: "center",
+                    padding: "10px",
+                    backgroundColor: "rgba(0, 0, 0, 0.8)",
+                    color: "#fff",
+                }}
+            >
+                From
+            </th>
+            <th
+                style={{
+                    textAlign: "center",
+                    padding: "10px",
+                    backgroundColor: "rgba(0, 0, 0, 0.8)",
+                    color: "#fff",
+                }}
+            >
+                To
+            </th>
+            <th
+                style={{
+                    textAlign: "center",
+                    padding: "10px",
+                    backgroundColor: "rgba(0, 0, 0, 0.8)",
+                    color: "#fff",
+                }}
+            >
+                Date
+            </th>
+            <th
+                style={{
+                    textAlign: "center",
+                    padding: "10px",
+                    backgroundColor: "rgba(0, 0, 0, 0.8)",
+                    color: "#fff",
+                }}
+            >
+                Time
+            </th>
+            <th
+                style={{
+                    textAlign: "center",
+                    padding: "10px",
+                    backgroundColor: "rgba(0, 0, 0, 0.8)",
+                    color: "#fff",
+                }}
+            >
+                Join
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td
+                style={{
+                    textAlign: "center",
+                    padding: "10px",
+                }}
+            >
+                {rideData.from}
+            </td>
+            <td
+                style={{
+                    textAlign: "center",
+                    padding: "10px",
+                }}
+            >
+                {rideData.to}
+            </td>
+            <td
+                style={{
+                    textAlign: "center",
+                    padding: "10px",
+                }}
+            >
+                {rideData.date}
+            </td>
+            <td
+                style={{
+                    textAlign: "center",
+                    padding: "10px",
+                }}
+            >
+                {rideData.time}
+            </td>
+            <td
+                style={{
+                    textAlign: "center",
+                    padding: "10px",
+                }}
+            >
+                <button style={{ backgroundColor: "black", color: "#fff" }}>
+                    Join
+                </button>
+            </td>
+        </tr>
+        {/* If you have more ride data, map over it and create rows here */}
+    </tbody>
+</table>
 				</div>
 			</div>
 		</div>
